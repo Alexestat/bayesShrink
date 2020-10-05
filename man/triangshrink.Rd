@@ -22,5 +22,5 @@ The shrunk wavelet coefficients vector.
 Performs bayesian shrinkage under triangular prior on empirical wavelet coefficients.
 }
 \examples{
-trianghrink(c(0.5,1,2),0.9,10,1)
+triangshrink(c(0.5,1,2),0.9,10,1)
 }

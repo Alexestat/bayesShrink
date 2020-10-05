@@ -6,7 +6,7 @@
 #' @param s The standard deviation of the normal random noise.
 #' @return The shrunk wavelet coefficients vector.
 #' @export
-#' @examples trianghrink(c(0.5,1,2),0.9,10,1)
+#' @examples triangshrink(c(0.5,1,2),0.9,10,1)
 triangshrink = function(d,alpha,m,s){
 
   library("triangle")
@@ -30,7 +30,7 @@ triangshrink = function(d,alpha,m,s){
     den = alpha*dnorm(d[i],0,s) + (1-alpha)*integrate(integrand2,lower = -m,upper = m,stop.on.error = FALSE)$value
 
     triangshrink[i] = num/den
-    if(abs(tbayes[i])>m) {tbayes[i] = x[i]}
+    if(abs(triangshrink[i])>m) {triangshrink[i] = d[i]}
   }
   triangshrink
 
